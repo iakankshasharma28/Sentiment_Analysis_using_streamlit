@@ -1,10 +1,10 @@
-import os
 import subprocess
+import sys
 
 # Ensure required libraries are installed
 required_packages = ["nltk", "textblob", "matplotlib", "wordcloud", "streamlit"]
 for package in required_packages:
-    subprocess.run(["pip", "install", package])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
 # Now import after installation
 import streamlit as st
@@ -12,6 +12,7 @@ import nltk
 from textblob import TextBlob
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
+
 
 
 # Download necessary NLTK resources
