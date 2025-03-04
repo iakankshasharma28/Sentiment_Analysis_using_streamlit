@@ -1,17 +1,18 @@
-import streamlit as st
 import os
-import pandas as pd
-from textblob import TextBlob
-import matplotlib.pyplot as plt
-from wordcloud import WordCloud
 import subprocess
 
-# Install missing dependencies
-required_packages = ["nltk", "textblob", "matplotlib", "wordcloud"]
+# Ensure required libraries are installed
+required_packages = ["nltk", "textblob", "matplotlib", "wordcloud", "streamlit"]
 for package in required_packages:
     subprocess.run(["pip", "install", package])
 
-import nltk  # Now import nltk after installation
+# Now import after installation
+import streamlit as st
+import nltk
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+
 
 # Download necessary NLTK resources
 nltk.download('punkt')
